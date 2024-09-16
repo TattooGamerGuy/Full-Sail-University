@@ -1,0 +1,121 @@
+/*-----------------
+:root {
+  --primary-font: "Press Start 2P";
+  --background-color: #111;
+  --text-color: #fff;
+  --heading-color: #00ff99;
+  --subheading-color: #ff0040;
+  --border-color: #ff0040;
+  --accent-color: #00ff99;
+}-----------------------*/
+
+#sudoku-game body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color for contrast */
+}
+
+#sudoku-game hr {
+  width: 500px;
+  border-color: #444; /* Darker color for divider */
+}
+
+#sudoku-game #errors {
+  color: #ff6f61; /* Coral works well with dark background */
+}
+
+#sudoku-game #board {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #1b1b1d;
+}
+
+#sudoku-game .tile {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #555;
+  background-color: #2a2a2c;
+  color: #e0e0e0;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sudoku-game #digits {
+  width: 450px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #1f1f1f; /* Dark background for digits */
+}
+
+#sudoku-game .number {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #444; /* Darker border for digits */
+  margin: 2px;
+  background-color: #2e2e2e; /* Darker background for numbers */
+  color: #e0e0e0; /* Light text for digits */
+
+  /* Text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sudoku-game .number-selected {
+  background-color: #555; /* Highlight selected number with medium gray */
+}
+
+#sudoku-game .tile-start {
+  background-color: #3b3b3b; /* Darker background for starter tiles */
+  color: #e0e0e0; /* Light text for starters */
+}
+
+#sudoku-game .horizontal-line {
+  border-bottom: 1px solid #d30e0e; /* Darker line for separation */
+}
+
+#sudoku-game .vertical-line {
+  border-right: 1px solid #e60303; /* Darker line for vertical separation */
+}
+#sudoku-game #title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#sudoku-game #title-container h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #e5e5ea; /* Assuming dark theme */
+}
+
+#sudoku-game #start-game-button {
+  padding: 0.5rem 1rem;
+  background-color: #3a3a3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#sudoku-game #start-game-button:hover {
+  background-color: #48484a;
+}
+#sudoku-game button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.5;
+}

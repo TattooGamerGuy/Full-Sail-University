@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+
+    <!-- Linking Stylesheets -->
+
+    <link rel="stylesheet" href="css/sudoku.css" />
+    <link rel="stylesheet" href="css/paper.css" />
+    <link rel="stylesheet" href="css/musicplayer.css" />
+    <link rel="stylesheet" href="css/pokedex.css" />
+    <!-------------------------------------->
+
+    <link rel="stylesheet" href="css/theme/dark-theme.css" id="theme-style" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      /* Import fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+    </style>
+  </head>
+  <body>
+    <!-------------------------------------->
+    <!--------- Header --------------------->
+
+    <header id="header-container">
+      <div id="animated-text-container">
+        <div id="animated-text">Welcome!</div>
+      </div>
+      <!-- Theme Selector -->
+
+      <div id="theme-select-container">
+        <label for="theme-select"></label>
+        <select id="theme-select">
+          <option value="dark-theme.css">Dark</option>
+          <option value="normal-theme.css">Normal</option>
+          <option value="modern-theme.css">Modern</option>
+          <option value="retro-theme.css">Retro</option>
+        </select>
+      </div>
+    </header>
+    <!-------------------------------------->
+    <!-- Main Layout Container -->
+    <div id="main-container">
+      <!-- Left Side Profile Panel -->
+      <div id="profile-sidepanel">
+        <div id="profile-picture">
+          <img
+            src="images/profile.jpg"
+            alt="Profile Picture"
+            id="profile-image"
+            class="inset-box-profile-img"
+          />
+        </div>
+        <div id="character-info">
+          <h2>Freddie Neale</h2>
+          <p>Web Developer | Game Developer</p>
+          <!-- About Section -->
+          <div class="profile-bio">
+            <div class="inset-box">
+              <h3>Bio</h3>
+              <p>
+                Currently pursuing a Bachelor’s degree in Web Development at
+                Full Sail University. Passionate about building immersive web
+                experiences and interactive stories. Founder of Algorithm
+                Academy, a platform for learning web development, and creator of
+                unique projects like ‘Pestilence’ and ‘Dead Harvest.’ I
+                typically spend my time combining technology with creativity
+                through video game development, music, writing, and digital art.
+                Always exploring new ways to push the boundaries of web and game
+                design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Hobbies Section -->
+
+      <div id="hobbies-section">
+        <div id="inventory-header">
+          <h3 class="hobbie-title">My Hobbies</h3>
+        </div>
+
+        <!-- Inventory Tabs -->
+
+        <div id="inventory-tabs">
+          <button class="tab active" data-hobby="web-development">
+            Web Development
+          </button>
+          <button class="tab" data-hobby="game-development">
+            Video Game Development
+          </button>
+          <button class="tab" data-hobby="drawing">Drawing</button>
+          <button class="tab" data-hobby="writing">Writing</button>
+          <button class="tab" data-hobby="music">Music</button>
+          <button class="tab" data-hobby="gaming">Pokemon</button>
+        </div>
+
+        <div id="inventory-grid">
+          <!-- Project Cards -------------->
+
+          <!-- Web Development Project -->
+
+          <div class="project-card" data-hobby="web-development">
+            <h4>Algorithm Academy</h4>
+            <div id="algo-content">
+              <img
+                src="images/algorithm-academy-placeholder.jpg"
+                alt="Algorithm Academy"
+                class="project-image"
+              />
+              <div class="inset-box-web">
+                <p>
+                  Algorithm Academy is an interactive learning platform designed
+                  to teach web development, focusing on practical skills and
+                  real-world application. It offers a hands-on approach to
+                  mastering front-end and back-end technologies through tiered
+                  modules, live projects, quizzes, and challenges. The platform
+                  caters to beginners and advanced learners alike, with
+                  personalized pathways, covering essential topics like HTML,
+                  CSS, JavaScript, React, and more. Algorithm Academy’s
+                  community-driven approach encourages collaboration,
+                  mentorship, and innovation, making it the ideal environment
+                  for aspiring developers to grow their skills and build a
+                  portfolio.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Game Development Project -->
+
+          <div
+            class="project-card"
+            data-hobby="game-development"
+            style="display: none"
+          >
+            <div id="sudoku-container">
+              <div id="title-container">
+                <h4>Sudoku</h4>
+                <button id="start-game-button">Start Game</button>
+                <button id="reset-game-button">Reset Game</button>
+              </div>
+              <div id="sudoku-game">
+                <hr />
+                <h2 id="errors">0</h2>
+
+                <!-- 9x9 board -->
+                <div id="board"></div>
+                <br />
+                <div id="digits"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drawing Project -->
+
+          <div class="project-card" data-hobby="drawing" style="display: none">
+            <h4 id="card-title">"The Cursed Archive"</h4>
+            <div class="drawing-content">
+              <div class="info-card">
+                <div class="info-header">Lords of The Pestilence</div>
+                <div class="info-content">
+                  <div class="info-image">
+                    <!-- Your Image Here -->
+                    <img src="images/artwork.jpeg" alt="Blood Shroud" />
+                  </div>
+                  <div class="info-description">
+                    <div class="project-title">- Blood Shroul -</div>
+                    <div class="project-description">
+                      A ghastly figure, draped in tattered, blood-soaked linens
+                      that cling to its twisted form. Its face is a grotesque
+                      blend of withered flesh and hollowed eyes, hinting at the
+                      horrors it has endured. Beneath the shroud, jagged
+                      remnants of bones and sinew peek through, as if stitched
+                      together by some dark magic. This entity embodies the very
+                      essence of decay and suffering, a haunting reminder of the
+                      relentless plague that grips the land. As it moves, a
+                      faint, chilling whisper follows, a sound that sends
+                      shivers down the spine of even the bravest souls.
+                    </div>
+                  </div>
+                </div>
+                <div class="quest-info">
+                  <strong class="quest-title">- Chronicles of Chaos -</strong>
+                  <span class="quest-title-name"></span>
+                  <br />
+                  <ul>
+                    <li>
+                      <strong>Location:</strong> - Cursed Catacombs -
+                      <strong>Time:</strong>-<span class="quest-time">
+                        Midnight </span
+                      >- <strong>Description:</strong> The Blood Shroud emerges
+                      from the Cursed Catacombs only when the moon reaches its
+                      zenith. At this time, its power is at its peak, making it
+                      nearly invulnerable to conventional weapons. The player
+                      must navigate the dark, winding catacombs, avoiding traps
+                      and deciphering ancient runes to reach the inner sanctum
+                      where the Blood Shroud resides. Its presence corrupts the
+                      air, causing the player to suffer a gradual loss of health
+                      over time.
+                    </li>
+                    <li>
+                      <strong>Location:</strong> - Plague-Ridden Village -
+                      <strong>Time:</strong>-<span class="quest-time">
+                        Dusk </span
+                      >- <strong>Description:</strong> As the sun sets and
+                      shadows lengthen, the Blood Shroud haunts the outskirts of
+                      a plague-ridden village. Villagers whisper of its arrival,
+                      marking the start of the "Plague's Hour." During this
+                      time, the shroud lingers near the potion shop, drawn to
+                      the alchemical energies within. Its presence brings a
+                      chilling mist that shrouds the village, and the player
+                      must prepare a special ward to fend off its advances
+                      before it fully manifests and consumes the village.
+                    </li>
+                    <li>
+                      <strong>Location:</strong> - Forest of Woe -
+                      <strong>Time:</strong>-<span class="quest-time">
+                        Dawn </span
+                      >- <strong>Description:</strong> Just before the first
+                      light touches the cursed woods, the Blood Shroud appears
+                      in the Forest of Woe, where it feeds on the souls of the
+                      lost. The player must confront it during this fleeting
+                      window, using the forest's natural barriers and enchanted
+                      flora to weaken its defenses. However, the forest itself
+                      twists under the Blood Shroud’s influence, with trees
+                      turning against the player, making this encounter both a
+                      physical and mental challenge.
+                    </li>
+                    <li>
+                      <strong>Prophecy:</strong> "Veil of the Crimson Dusk" -
+                      <strong>Description:</strong> This prophecy marks the
+                      beginning of the player's journey to uncover the truth
+                      behind the Blood Shroud's existence. Ancient texts speak
+                      of a shrouded figure that arises every 444 years to feed
+                      on the life force of the land, signaling the dawn of a new
+                      age of pestilence. The player must undertake this quest to
+                      break the cycle, journeying through treacherous terrains,
+                      gathering ancient relics, and unlocking the secrets hidden
+                      within the Blood Shroud’s haunting presence.
+                    </li>
+                  </ul>
+                </div>
+                <div class="info-footer"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Writing Project -->
+
+          <div class="project-card" data-hobby="writing" style="display: none">
+            <h4>Game Synopsis</h4>
+            <div id="paper-main">
+              <div class="paper-content">
+                <header>
+                  <h1>Pestilence</h1>
+                  <h2>A Plague Reborn</h2>
+                </header>
+
+                <div class="content-layout">
+                  <h2>Action/RPG</h2>
+                  <p>
+                    In a kingdom ravaged by a mysterious and malevolent force
+                    known as the Shroud, hope has become a distant memory. Once
+                    thriving villages now stand as hollow shells, their people
+                    consumed by despair, and the land itself twisted by a
+                    darkness that seems to have no end. At the heart of this
+                    chaos lies a prophecy—one that foretells the coming of a
+                    plague doctor, destined to confront the Shroud and its
+                    enigmatic master, The Raven.
+                  </p>
+                  <p>
+                    Pestilence is a dark, immersive RPG where every decision
+                    shapes the fate of a world teetering on the brink of
+                    oblivion. As a plague doctor in training, you are thrust
+                    into a battle not only against the Shroud but against time
+                    itself. Guided by an ancient prophecy, you must navigate a
+                    kingdom in ruins, forging alliances with desperate
+                    villagers, unraveling the mysteries of a forgotten past, and
+                    facing the relentless spread of the Shroud that seeks to
+                    consume all.
+                  </p>
+
+                  <h2>Chapter</h2>
+                  <p>
+                    The prophecy is intricately tied to the very fabric of time.
+                    Every 444 years, a new prophecy cycle begins, resetting the
+                    world while retaining the echoes of your past deeds. Each
+                    cycle, known as a Prophecy Tier, introduces new challenges,
+                    deeper mysteries, and powerful enemies. As the in-game clock
+                    ticks forward, the time of day and day of the week become
+                    crucial, with specific events and opportunities arising only
+                    at certain moments. From the quiet morning of Sun’s Dawn to
+                    the foreboding night of Shadow’s Veil, time is both your
+                    ally and your greatest adversary.
+                  </p>
+                  <p>
+                    Your journey will take you through decaying villages,
+                    haunted forests, and ancient ruins as you confront The
+                    Raven, a figure shrouded in mystery and darkness. With each
+                    passing day, the Shroud’s influence grows, forcing you to
+                    make difficult choices: Will you sacrifice your own humanity
+                    to save the kingdom, or will you succumb to the same
+                    darkness that plagues the land? The answers lie within the
+                    cycles of prophecy, where every 444 years, a new path is
+                    forged, and a new destiny awaits.
+                  </p>
+
+                  <p>
+                    Pestilence is more than a game—it is a saga of survival,
+                    sacrifice, and the ceaseless struggle against the
+                    encroaching darkness. Will you break the cycle and banish
+                    the Shroud forever, or will you become another lost soul in
+                    its endless tide? The fate of the kingdom rests in your
+                    hands, bound by the threads of prophecy and the relentless
+                    march of time.
+                  </p>
+                </div>
+                <footer id="footer-paper">
+                  <p>&copy; TattooGamerGuy 2024</p>
+                </footer>
+              </div>
+            </div>
+          </div>
+
+          <!-- Music Project -->
+
+          <div class="project-card" data-hobby="music" style="display: none">
+            <h4>Music Library</h4>
+            <div id="music-content">
+              <div id="music-player">
+                <input
+                  type="file"
+                  id="song-input"
+                  accept="audio/*"
+                  multiple
+                  style="display: none"
+                />
+                <!-- Main content section for song list and player controls -->
+                <div id="main-section">
+                  <div id="song-info">
+                    <div id="song-info-selected">
+                      <img
+                        id="song-image"
+                        src="images/placeholder.jpg"
+                        alt="Song Art"
+                      />
+                      <p class="song-title">No Song Playing</p>
+                      <p class="artist-name">Unknown Artist</p>
+
+                      <p id="time" class="song-length"></p>
+                    </div>
+                  </div>
+                  <div id="control-panel">
+                    <div id="controls">
+                      <button id="prev">&lt;&lt;</button>
+                      <button id="play-pause">Play</button>
+                      <button id="next">&gt;&gt;</button>
+                    </div>
+                  </div>
+                  <div id="bar-slider">
+                    <div class="progress-container">
+                      <input
+                        type="range"
+                        id="progress-bar"
+                        value="0"
+                        min="0"
+                        step="1"
+                        max="100"
+                      />
+                    </div>
+                  </div>
+
+                  <div id="volume-control-container">
+                    <i class="fa-solid fa-volume-high" id="volume-icon"></i>
+                    <div class="volume-slider">
+                      <input
+                        type="range"
+                        id="volume-control"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="1"
+                      />
+                    </div>
+                  </div>
+                  <div id="song-content">
+                    <div id="songs" class="content-tab" style="display: none">
+                      <div id="song-list" class="song-grid">
+                        <!-- Default songs will be displayed here -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gaming Project -->
+
+          <div class="project-card" data-hobby="gaming" style="display: none">
+            <h4>Pokemon</h4>
+            <div id="pokemon-search-container">
+              <input
+                type="text"
+                id="pokemon-search"
+                placeholder="Search Pokémon"
+                autocomplete="off"
+              />
+              <div id="autocomplete-list" class="autocomplete-items"></div>
+            </div>
+            <div id="gaming-container">
+              <div id="gameboy-main">
+                <!-- Pokémon Name Section -->
+                <div id="pokemon-list-container">
+                  <div id="pokemon-name">BULBASAUR</div>
+                </div>
+
+                <!-- Main Screen with Type, Image, and Description -->
+                <div id="gameboy-screen">
+                  <div id="screen-overlay"></div>
+
+                  <!-- Pokémon Types -->
+                  <div id="pokemon-types"></div>
+
+                  <!-- Pokémon Image -->
+                  <img
+                    id="pokemon-img"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprite/master/sprites/pokemon/1.png"
+                    alt="Pokemon"
+                  />
+
+                  <!-- Pokémon Description -->
+                  <div id="pokemon-description">
+                    <div class="pokemon-info">
+                      <div class="pokemon-section">
+                        <h3 class="info-title">Abilities</h3>
+                        <p id="pokemon-abilities">Loading abilities...</p>
+                      </div>
+                      <div class="pokemon-section">
+                        <h3 class="info-title">Stats</h3>
+                        <p id="pokemon-stats">Loading stats...</p>
+                      </div>
+                      <div class="pokemon-section">
+                        <h3 class="info-title">Height</h3>
+                        <p id="pokemon-height">Loading height...</p>
+                      </div>
+                      <div class="pokemon-section">
+                        <h3 class="info-title">Weight</h3>
+                        <p id="pokemon-weight">Loading weight...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Control Buttons -->
+                <div class="control-container">
+                  <button class="small-button" id="left-button">&lt;</button>
+                  <button class="small-button" id="right-button">&gt;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-content">
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>
+              <a href="https://mail.google.com/mail/u/0/#inbox"
+                >Freddie.Neale86@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Social Media Section -->
+          <div class="footer-section">
+            <h3>Follow Me</h3>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61563640050352"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://x.com/TattooGGuy"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/bloodshot_studios/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3></h3>
+            <p>Freddie Neale</p>
+            <p>Interfaces and Usability</p>
+            <p>9-15-2024</p>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <p>
+              &copy; 2024 TattooGamerGuy. All rights reserved. |
+              <a href="#">Privacy Policy</a> |
+              <a href="#">Terms of Service</a>
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <div class="galaxy" id="galaxy"></div>
+    </div>
+    <!-------------------------------------->
+
+    <!-- JavaScript -->
+
+    <script src="js/sudoku.js"></script>
+    <script src="js/musicplayer.js"></script>
+    <script src="js/pokedex.js"></script>
+    <script src="js/galaxy.js"></script>
+    <script src="js/tab-switcher.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/theme-text.js"></script>
+  </body>
+</html>

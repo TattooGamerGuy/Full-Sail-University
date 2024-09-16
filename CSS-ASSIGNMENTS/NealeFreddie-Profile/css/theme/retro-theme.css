@@ -1,0 +1,938 @@
+:root {
+  --primary-font: "Press Start 2P";
+  --background-color: #111;
+  --text-color: #00ff99;
+  --heading-color: #00ff99;
+  --subheading-color: #ff0040;
+  --border-color: #ff0040;
+  --accent-color: #00ff99;
+}
+
+/*----------------------------------------*/
+/*----------------- General Section -----------------------*/
+html {
+  font-size: 16px;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  margin: 0;
+  padding-top: 7rem;
+  background-color: #111;
+  font-family: var(--primary-font);
+}
+h3 {
+  padding: 20px;
+}
+h3,
+h4 {
+  animation: neon-flicker 2s infinite alternate;
+}
+.small-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  background-color: #333;
+  color: var(--text-color);
+  border: 2px solid var(--subheading-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+.small-button:hover {
+  background-color: var(--border-color);
+  color: #fff;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+}
+
+/*----------------------------------------*/
+/*----------------- Header Section -----------------------*/
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  color: var(--text-color);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  border-bottom: 4px solid var(--border-color);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  height: 4rem;
+}
+/*----------------------------------------*/
+
+#animated-text-container {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+#animated-text {
+  white-space: nowrap;
+  display: inline-block;
+  animation: move-text-retro 15s linear infinite;
+  color: var(--accent-color);
+  font-size: 1.4rem;
+}
+
+@keyframes move-text-retro {
+  0% {
+    transform: translateX(220%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/*----------------------------------------*/
+/*----------------- Theme Section -----------------------*/
+
+#theme-select-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+#theme-select {
+  background-color: var(--border-color);
+  color: #fff;
+  padding: 0.5rem;
+  font-family: var(--primary-font);
+  margin-left: 1rem;
+  border: 2px solid #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#theme-select:hover {
+  background-color: #ffa500;
+  transform: scale(1.1);
+  box-shadow: 0 0.25rem 1rem rgba(255, 204, 0, 1);
+  transform: scale(1.05);
+  animation: rubberBand 1s ease;
+}
+
+@keyframes fade-glow-retro {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0.5rem 2rem rgba(255, 204, 0, 1);
+  }
+}
+
+@keyframes neon-flicker {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 0, 64, 0.5), 0 0 10px rgba(255, 0, 64, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 0, 64, 1), 0 0 30px rgba(255, 0, 64, 1);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 0, 64, 0.5), 0 0 10px rgba(255, 0, 64, 0.5);
+  }
+} /*----------------------------------------*/
+/*------------------- Main Container ---------------------*/
+
+#main-container {
+  display: flex;
+  grid-template-columns: 30% 68%;
+  gap: 2%;
+  padding: 2rem;
+}
+/*----------------------------------------*/
+/*----------------- Profile Section -----------------------*/
+
+#profile-sidepanel {
+  background: linear-gradient(145deg, #000, #222);
+  padding: 2rem;
+  border: 4px solid #00ff99;
+  text-align: left;
+  box-shadow: 0 0 10px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  border-radius: 8px;
+}
+
+#profile-image {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 4px;
+  border: 4px solid #ff0040;
+  background-color: #000;
+  margin-bottom: 1.5rem;
+}
+
+#character-info {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  color: #00ff99;
+  font-family: "Press Start 2P", cursive;
+  padding-left: 0.4rem;
+}
+#character-info h2 {
+  font-size: 1.4rem;
+}
+
+#character-info p {
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+}
+
+#hobbies-section {
+  background: linear-gradient(145deg, #000, #222);
+  padding: 2rem;
+  border: 4px solid #00ff99;
+  box-shadow: 0 0 10px #000;
+}
+#inventory-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.875rem;
+  background: linear-gradient(145deg, #000, #222);
+}
+
+#inventory-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background-color: #333;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.tab.active {
+  background-color: #ff0040;
+  color: #fff;
+}
+
+.tab:hover {
+  transform: scale(1.05);
+  background-color: #ff0040;
+  color: #fff;
+
+  animation: bounce 0.5s ease;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/*----------------------------------------*/
+/*---------------- Project Cards ------------------------*/
+
+.project-card {
+  background: linear-gradient(145deg, #000, #222);
+
+  border: 4px solid #00ff99;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 52rem;
+  height: 52rem;
+
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.9), 0 0 30px rgba(255, 0, 64, 0.9);
+  animation: glow 1s ease infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.9);
+  }
+}
+
+.project-card h4 {
+  font-size: 2.4rem;
+  color: #ff0040;
+  margin-bottom: 1rem;
+}
+
+.project-card img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+  border: 2px solid #fff;
+}
+
+.project-card p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-top: 2px;
+}
+/*----------------------------------------*/
+/*-------------- Web-Development Section --------------------------*/
+
+#algo-content {
+  padding-top: 50px;
+}
+
+#algo-content img {
+  border: 2px solid #ff0040;
+}
+#algo-content p {
+  padding-top: 50px;
+}
+
+/*----------------------------------------*/
+
+/*-------------- Video Game Development -------------------------*/
+
+#sudoku-game .number {
+  border: 1px solid #444;
+  background-color: #2e2e2e;
+  color: #ff0040;
+}
+#sudoku-game .number-selected {
+  background-color: #00ff99;
+}
+
+#sudoku-game .tile-start {
+  color: #ff0040;
+}
+#sudoku-game .tile-placed {
+  color: #00ff99;
+}
+
+#sudoku-game .horizontal-line {
+  border-bottom: 1px solid #00ff99;
+}
+
+#sudoku-game .vertical-line {
+  border-right: 1px solid #00ff99;
+}
+#sudoku-container #start-game-button {
+  background-color: #00ff99;
+  color: #ff0040;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+#sudoku-container #reset-game-button {
+  background-color: #00ff99;
+  color: #ff0040;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+/*----------------------------------------*/
+/*----------------- Drawing Section -----------------------*/
+
+.drawing-content {
+  display: flex;
+  background: linear-gradient(to bottom, #001a08, #012f13);
+  color: var(--text-color);
+  border: 2px solid #00230e;
+  padding: 1rem;
+  height: 41rem;
+  font-family: var(--primary-font);
+  box-shadow: 0 0 10px var(--accent-color);
+  animation: glow 2s infinite alternate;
+}
+
+.info-card {
+  background: linear-gradient(to bottom, #03942f, #012f13);
+  color: #fff;
+  width: 80%;
+  max-width: 800px;
+  margin-left: 4rem;
+  border: 2px solid #000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+}
+
+.info-header {
+  background-color: #012f13;
+  text-align: center;
+  color: #ffd700;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-bottom: 6px solid #000;
+}
+
+.info-content {
+  display: flex;
+  justify-content: space-between;
+  text-align: start;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.info-image {
+  width: 20.5rem;
+  transform: rotate(-90deg);
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.info-image img {
+  width: 95%;
+  height: 100%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+  border: 8px solid #012f13;
+}
+
+.info-description {
+  width: 50%;
+  line-height: 1.2rem;
+}
+
+.project-title {
+  color: #ffd700;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.quest-title {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  margin-left: 10rem;
+}
+.quest-title-name {
+  font-size: 1.4rem;
+}
+.quest-time {
+  color: #00ff99;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  height: 14rem;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+  border: 8px solid #012f13;
+}
+
+.quest-info {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffd700;
+  padding: 0.5rem;
+  text-align: left;
+  line-height: 1.4rem;
+  margin: 1rem;
+  margin-top: 1rem;
+  height: 10rem;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 8px solid #012f13;
+}
+.quest-info strong {
+  color: #ff0040;
+}
+.quest-info ul {
+  list-style-type: none;
+  padding: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-footer {
+  text-align: center;
+  background-color: #01240e;
+  border-top: 8px solid #000;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.exit-button {
+  background-color: #b22222;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  background-color: #ff4040;
+}
+
+.project-description::-webkit-scrollbar,
+.quest-info::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-description::-webkit-scrollbar-thumb,
+.quest-info::-webkit-scrollbar-thumb {
+  background: #ffd700;
+  border-radius: 5px;
+}
+
+.project-description::-webkit-scrollbar-track,
+.quest-info::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+/*----------------------------------------*/
+/*----------------- Writing Section -----------------------*/
+#paper-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#paper-main .content-layout {
+  padding-left: 6px;
+}
+#paper-main header {
+  display: block;
+  justify-content: space-between;
+  padding: 10px;
+  padding-bottom: 0;
+  height: 6rem;
+  background-color: #000;
+  color: var(--heading-color);
+  border-bottom: 4px solid var(--subheading-color);
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+#paper-main header h1 {
+  display: inline;
+  align-items: center;
+  height: 5rem;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+#paper-main header h2 {
+  margin-bottom: 0;
+  padding: 0;
+  padding-left: 550px;
+  padding-bottom: 0;
+  margin-bottom: 0%;
+  padding-top: 30px;
+
+  font-size: 0.6rem;
+}
+#paper-main h2 {
+  font-size: 1.2rem;
+}
+#paper-main ul {
+  text-align: justify;
+  padding-right: 50px;
+
+  line-height: 1.4rem;
+}
+#paper-main li {
+  font-size: 0.65rem;
+}
+.paper-content {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff99 #222;
+}
+.paper-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.paper-content::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+
+.paper-content::-webkit-scrollbar-thumb {
+  background-color: #00ff99;
+  border-radius: 10px;
+  border: 3px solid #222;
+}
+
+.paper-content::-webkit-scrollbar-thumb:hover {
+  background-color: #ff0040;
+}
+#footer-paper {
+  height: 2rem;
+}
+
+/*----------------------------------------*/
+
+/*----------------- Music Section -----------------------*/
+
+#music-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 45rem;
+  border: #00ff99;
+  height: 45rem;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 10px solid #00ff99;
+}
+#music-content #music-player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  height: 40rem;
+  background: linear-gradient(145deg, #000, #222);
+  border-radius: 10px;
+}
+#music-content #main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42rem;
+  height: 50rem;
+  background: linear-gradient(145deg, #000, #222);
+  border-radius: 2px;
+}
+
+#music-content #song-info {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 20rem;
+  padding-top: 10px;
+  border-radius: 2px;
+  height: 16rem;
+}
+#music-content #song-info-selected {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 20px;
+  width: 20rem;
+  height: 16rem;
+}
+#music-content #song-info-selected .song-title {
+  padding-top: 20px;
+  font-size: 0.9rem;
+
+  color: #00ff99;
+}
+
+#music-content #song-info-selected .artist-name {
+  padding-top: 20px;
+  font-size: 0.7rem;
+  color: #ff0040;
+}
+#music-content #song-info .song-length {
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #00ff99;
+}
+
+#music-content #song-image {
+  width: 6rem;
+  height: 6rem;
+}
+#music-content #song-info-selected img {
+  border: 4px solid #ff0040;
+}
+
+#music-content #control-panel {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+#music-content #controls {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+}
+#music-content #prev,
+#music-content #play-pause,
+#music-content #next {
+  color: #00ff99;
+  background-color: #ff0040;
+}
+#music-content #prev:hover,
+#music-content #play-pause:hover,
+#music-content #next:hover {
+  box-shadow: 0 0 10px rgba(255, 0, 64, 0.7), 0 0 15px rgba(0, 255, 153, 0.7);
+}
+#music-content button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #ff3366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#music-content button:hover {
+  background-color: #ff3366;
+}
+
+/* Slider Styles */
+#music-content #bar-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+#music-content input[type="range"] {
+  width: 90%;
+  max-width: 500px;
+  margin: 5px;
+}
+
+#music-content input[type="range"] {
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(255, 0, 64, 0.7), 0 0 15px rgba(0, 255, 153, 0.7);
+}
+
+#music-content input[type="range"]:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 64, 1), 0 0 30px rgba(0, 255, 153, 1);
+}
+
+#music-content #song-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 42rem;
+  height: 16rem;
+}
+#music-content .song-card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.9), 0 0 30px rgba(255, 0, 64, 0.9);
+  animation: glow 1s ease infinite alternate;
+}
+#music-content #song-content img {
+  border: 4px solid #00ff99;
+  width: 3rem;
+  height: 3rem;
+}
+#music-content #song-content .song-title {
+  padding-top: 8px;
+  font-size: 0.6rem;
+  color: #ff0040;
+}
+#music-content #song-content .artist-name {
+  padding-top: 8px;
+  font-size: 0.5rem;
+  color: #00ff99;
+}
+#music-content #song-content .song-length {
+  padding-top: 20px;
+  font-size: 0.5rem;
+  color: #ff0040;
+}
+/*----------------- Music Responsive Section -----------------------*/
+
+@media (max-width: 768px) {
+  #music-content #music-content {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  #music-content #music-player {
+    padding: 15px;
+  }
+
+  #music-content #control-panel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #music-content #controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #music-content #song-info {
+    font-size: 0.9rem;
+  }
+
+  #music-content button {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  #music-content #song-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+/*----------------------------------------*/
+/*----------------- Pokemon Section -----------------------*/
+
+#gaming-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50rem;
+  height: 44rem;
+  background-color: var(--background-color);
+  border-radius: 2px;
+}
+#gameboy-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48rem;
+  height: 43rem;
+  background-color: #951515;
+  border-radius: 8px;
+  border: 4px solid #00ff99;
+}
+
+/*----------------------------------------*/
+/*------------- Footer Section ---------------------------*/
+
+footer {
+  background: linear-gradient(145deg, #000, #222);
+  padding: 3rem 2rem;
+  padding-top: 20rem;
+  color: #ccccff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #00ff99;
+
+  box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #ff0040;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px #ff0040;
+}
+
+.footer-section p,
+.footer-section a {
+  line-height: 1.3rem;
+
+  color: #00ff99;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff0040;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #00ff99;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff0040;
+}
+
+.footer-bottom {
+  margin-top: 30rem;
+  border-top: 1px solid #00ff99;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  color: #00ff99;
+}
+
+.footer-bottom a {
+  line-height: 1.3rem;
+  color: #ff0040;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/*----------------------------------------*/
+/*----------------------------------------*/

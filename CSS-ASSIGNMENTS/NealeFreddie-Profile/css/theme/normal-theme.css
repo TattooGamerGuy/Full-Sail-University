@@ -1,0 +1,1275 @@
+:root {
+  --primary-font: "Arial, sans-serif";
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --heading-color: #5e5e61;
+  --border-color: #d1d1d6;
+  --accent-color: #48484a;
+}
+/*----------------- General Section -----------------------*/
+html {
+  font-size: 16px;
+  background-color: var(--background-color);
+  font-family: var(--primary-font);
+  color: var(--text-color);
+}
+
+body {
+  margin: 0;
+  padding-top: 7rem;
+  background-color: var(--background-color);
+  font-family: var(--primary-font);
+}
+h3 {
+  padding: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+}
+
+/*----------------------------------------*/
+/*----------------- Header Section -----------------------*/
+
+/* Header */
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  color: #333333;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  border-bottom: 0.125rem solid var(--border-color);
+  height: 5rem;
+}
+/*----------------------------------------*/
+/* Animated Text */
+#animated-text-container {
+  flex-grow: 1;
+  overflow: hidden;
+  height: 100%;
+  display: inline;
+  align-items: right;
+}
+
+#animated-text {
+  white-space: nowrap;
+  display: inline-block;
+  animation: move-text-dark 15s linear infinite;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  padding-top: 1.55rem;
+  padding-left: 1.25rem;
+}
+@keyframes move-text-dark {
+  0% {
+    transform: translateX(500%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/*----------------------------------------*/
+/*----------------- Theme Section -----------------------*/
+
+#theme-select-container {
+  display: flex;
+  color: var(--heading-color);
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+#theme-select {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+#theme-select:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.1);
+  box-shadow: 0 0.25rem 0.75rem rgba(215, 87, 2, 0.7);
+}
+
+#theme-select option {
+  background-color: #1b1b1b;
+  color: #ffcc00;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#theme-select option:hover {
+  background-color: #333;
+}
+
+#theme-select::-webkit-scrollbar {
+  width: 8px;
+}
+
+#theme-select::-webkit-scrollbar-thumb {
+  background-color: #ff0040;
+  border-radius: 5px;
+}
+
+#theme-select::-webkit-scrollbar-track {
+  background: #1b1b1b;
+}
+
+/*----------------------------------------*/
+/*------------------- Main Container ---------------------*/
+
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 71rem;
+  padding: 2.5rem;
+  padding-left: 0;
+  background-color: #ffffff;
+  border-radius: 1.875rem;
+}
+
+#main-container .hobbie-title {
+  color: #333333;
+  padding-top: 0;
+  padding-left: 40rem;
+  font-size: 2rem;
+}
+/*----------------------------------------*/
+/*----------------- Profile Section -----------------------*/
+
+#profile-sidepanel {
+  background-color: #f0f0f0;
+  border-right: 0.125rem solid #5e5e61;
+  padding: 1.875rem 1.5625rem;
+  border-radius: 10px;
+  width: 20rem;
+  height: 68rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-image {
+  width: 100%;
+  max-width: 11.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 4px solid #e0e0e0;
+}
+.inset-box {
+  width: 300px;
+  height: 600px;
+  background-color: #949494;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid #333;
+  padding: 20px;
+  color: #fff;
+}
+.inset-box-profile-img {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(0, 0, 0, 0.4);
+  border: 4px solid #333;
+  padding: 20px;
+  color: #fff;
+}
+
+.profile-bio {
+  line-height: 1.6rem;
+}
+.profile-bio h3 {
+  color: #333333;
+  line-height: 1.6rem;
+}
+
+#character-info {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.4rem;
+}
+#character-info h2 {
+  color: #333333;
+  margin-top: 1.25rem;
+  font-size: 1.5rem;
+}
+
+#character-info p {
+  color: #2c2c2c;
+  font-size: 1.1rem;
+  margin-top: 0.625rem;
+}
+
+#inventory-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.875rem;
+}
+
+#inventory-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.tab {
+  background-color: #f0f0f0;
+  color: #333333;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.tab.active {
+  background-color: #48484a;
+  color: #ffffff;
+}
+
+.tab:hover {
+  background-color: #48484a;
+  color: var(--background-color);
+}
+
+/*----------------------------------------*/
+
+#hobbies-section {
+  width: 90rem;
+  margin-left: 1.25rem;
+}
+/*---------------- Project Cards ------------------------*/
+
+.project-card {
+  background-color: #f0f0f0;
+  border-radius: 1.25rem;
+  padding: 2.5rem 1.5625rem;
+  text-align: center;
+
+  width: 40rem;
+  height: 46rem;
+  max-width: 37.5rem;
+}
+
+.project-card:hover {
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.9);
+  }
+}
+
+.project-card h4 {
+  color: #333333;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-card img {
+  width: 12rem;
+  height: 12rem;
+}
+
+.project-card p {
+  color: #8e8e93;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+/*----------------------------------------*/
+/*-------------- Web-Development Section --------------------------*/
+
+#algo-content {
+  height: 39rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+#algo-content .project-image {
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  box-shadow: 0 0.25rem 0.75rem rgba(188, 185, 182, 0.7);
+}
+#algo-content p {
+  color: #333333;
+  height: 10.5rem;
+  border-radius: 20px;
+}
+
+/*----------------------------------------*/
+/*-------------- Video Game Development -------------------------*/
+
+#sudoku-container {
+  display: inline-block;
+  width: 38rem;
+  height: 48rem;
+  border-radius: 20px;
+}
+
+#sudoku-game {
+  display: inline-block;
+  width: 37rem;
+  height: 39rem;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#sudoku-game .number {
+  border: 1px solid #444;
+  background-color: #444;
+  color: #e5e5ea;
+}
+#sudoku-game .number-selected {
+  background-color: #767373;
+}
+
+#sudoku-game .tile-start {
+  color: #e5e5ea;
+}
+#sudoku-game .tile-placed {
+  color: #00ff99;
+}
+
+#sudoku-game .horizontal-line {
+  border-bottom: 1px solid #e5e5ea;
+}
+
+#sudoku-game .vertical-line {
+  border-right: 1px solid #e5e5ea;
+}
+/*----------------------------------------*/
+/*----------------- Drawing Section -----------------------*/
+
+.drawing-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+  height: 40rem;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #949494;
+  color: #333333;
+}
+.drawing-content .project-card #card-title {
+  color: #333333;
+}
+
+/* Info card */
+.drawing-content .info-card {
+  border: 2px solid #444; /* Lighter border */
+  background-color: #c4c4c4; /* Slightly lighter background for contrast */
+  color: #333333;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  max-width: 600px; /* Set a max-width for the container */
+  width: 100%; /* Ensure the card takes the full width within its max-width */
+  height: 95%;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Info header */
+.drawing-content .info-header {
+  background-color: #c4c4c4;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: #ffeb3b;
+}
+
+/* Image section */
+.drawing-content .info-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.drawing-content .info-image img {
+  max-width: 100%;
+  height: auto;
+  transform: rotate(-90deg);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.drawing-content .project-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0;
+  color: #ff5722;
+}
+
+.drawing-content .project-description {
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 10px;
+  border: 1px solid #444;
+  background-color: #949494;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  color: #333333;
+  max-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Quest Info with scroll */
+.drawing-content .quest-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #444;
+  background-color: #949494;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  max-height: 90px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Quest Titles */
+.drawing-content .quest-title {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ff5722;
+}
+
+/* Quest time */
+.drawing-content .quest-time {
+  color: #ffeb3b;
+}
+
+/* List styling */
+.drawing-content .quest-info ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.drawing-content .quest-info li {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.drawing-content .info-footer {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  color: #bbb;
+}
+/*----------------------------------------*/
+/*----------------- Writing Section -----------------------*/
+#paper-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #898989;
+
+  border-radius: 20px;
+}
+#paper-main body {
+  font-family: Arial, sans-serif;
+  border-radius: 20px;
+}
+#paper-main .content-layout {
+  padding-left: 6px;
+  border-radius: 20px;
+}
+#paper-main header {
+  padding: 1rem;
+  padding-bottom: 0;
+  height: 6rem;
+  background-color: #c4c4c4;
+  color: var(--heading-color);
+  border-bottom: 4px solid #e5e5ea;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+#paper-main header h1 {
+  color: #333333;
+  animation: none;
+}
+
+#paper-main header h2 {
+  color: #333333;
+  margin-bottom: 0;
+  padding: 0;
+  padding-left: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0%;
+  padding-top: 30px;
+  animation: none;
+  font-size: 0.6rem;
+}
+#paper-main h2 {
+  font-size: 1.2rem;
+  animation: none;
+}
+#paper-main h1,
+#paper-main h2,
+#paper-main h3 {
+  font-family: Arial, sans-serif;
+}
+#paper-main p {
+  color: #333333;
+}
+
+/* For Firefox */
+#paper-main .paper-content {
+  scrollbar-width: thin;
+  scrollbar-color: #9fa1a0 #222;
+  border-radius: 20px;
+  background-color: #c4c4c4;
+  color: #333333;
+  box-shadow: 0 10px 20px rgba(121, 120, 120, 0.2);
+}
+
+#paper-main .paper-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+#paper-main .paper-content::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+
+#paper-main .paper-content::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  border: 3px solid #222;
+}
+
+#paper-main .paper-content::-webkit-scrollbar-thumb:hover {
+  background-color: #ff0040;
+}
+#paper-main #footer-paper {
+  border-top: none;
+}
+#paper-main #footer-paper {
+  width: 30rem;
+  height: 4rem;
+  margin-left: 0;
+
+  border-top: 2px solid #333333;
+}
+#paper-main #footer-paper p {
+  padding: 0;
+  margin-top: 0;
+  font-size: 10px;
+  width: 100%;
+}
+/*----------------------------------------*/
+
+/*----------------- Music Section -----------------------*/
+
+#music-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 61rem;
+  height: 42rem;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #191414;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Music Player */
+#music-content #music-player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+  padding: 20px;
+
+  background-color: #191414;
+  border-radius: 10px;
+}
+
+/* Main Section */
+#music-content #main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36rem;
+  height: 42rem;
+  background-color: #191414;
+  border-radius: 10px;
+}
+
+/* Song Info */
+#music-content #song-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 12rem;
+  height: 18rem;
+  padding-top: 20px;
+  margin-top: 12px;
+  border-radius: 2px;
+  margin-bottom: 0;
+}
+
+#music-content #song-info-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+#music-content #song-info-selected .song-title {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+#music-content #song-info-selected .artist-name {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+
+#music-content #song-info .song-length {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+#music-content #song-image {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+#music-content #song-info-selected img {
+  border: none;
+}
+
+/* Control Panel */
+#music-content #control-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 6px;
+}
+
+#music-content #controls {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+#music-content #prev,
+#music-content #play-pause,
+#music-content #next {
+  color: #191414;
+}
+
+#music-content button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #1db954;
+  color: #191414;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#music-content button:hover {
+  background-color: #1ed760;
+}
+
+/* Slider Styles */
+#music-content #bar-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+#music-content input[type="range"] {
+  width: 100%;
+  max-width: 500px;
+  margin: 5px;
+  height: 5px;
+  background: #535353;
+  border-radius: 5px;
+}
+
+#music-content input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#music-content input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #535353;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Volume Control */
+#music-content #volume-control-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 1rem;
+  padding-bottom: 0;
+}
+
+#music-content #volume-icon {
+  color: #b3b3b3;
+  margin-right: 10px;
+}
+
+.volume-slider input[type="range"] {
+  width: 100%;
+  max-width: 150px;
+  height: 5px;
+  background: #535353;
+  border-radius: 5px;
+}
+
+.volume-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #535353;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Song Content */
+#music-content #song-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 14rem;
+  margin-top: 0;
+}
+
+#music-content #song-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#music-content #song-content .song-title,
+#music-content #song-content .artist-name,
+#music-content #song-content .song-length {
+  color: #b3b3b3;
+}
+
+/* Scrollbar */
+#music-content #song-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#music-content #song-list::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+/*----------------------------------------*/
+/*----------------- Pokemon Section -----------------------*/
+
+#gaming-container {
+  width: 37.5rem;
+  height: 38rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #1b1b1b;
+}
+
+/* Main Pokedex structure */
+#gaming-container #gameboy-main {
+  background-color: #2b2b2b;
+  border: 10px solid #333;
+  border-radius: 20px;
+  width: 95%;
+  height: 95%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+/* Pokemon Name Section */
+#gaming-container #pokemon-list-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#gaming-container #pokemon-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #88c070;
+  background-color: #3a3a3a;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 2px solid #88c070;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#gaming-container #gameboy-screen {
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 15px;
+  width: 100%;
+  height: 50rem;
+  padding: 10px;
+  padding-top: 20px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+#gaming-container #screen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+/* Pokemon Types */
+#gaming-container #pokemon-types {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+#gaming-container .pokemon-type {
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #606060;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Pokemon Image */
+#gaming-container #pokemon-img {
+  width: 120px;
+  height: 120px;
+  background-color: #3a3a3a;
+  border: 2px solid #88c070;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  margin-bottom: 10px;
+}
+
+/* Pokemon Description */
+#gaming-container #pokemon-description {
+  background-color: #111;
+  width: 100%;
+  padding: 5px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+  margin-bottom: 5px;
+  max-height: 140px; /* Limit height */
+}
+
+#gaming-container .info-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #88c070;
+  line-height: 1.2rem;
+  margin-bottom: 5px;
+  background-color: #333;
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Info Text */
+#gaming-container .pokemon-info p {
+  font-size: 0.8rem;
+  color: #88c070;
+  margin: 3px 0;
+  background-color: #222;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+/* Control Buttons */
+#gaming-container .control-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#gaming-container .small-button {
+  background-color: #606060;
+  border: 2px solid #444;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+#gaming-container .small-button:active {
+  background-color: #505050;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Autocomplete container */
+#pokemon-search-container {
+  position: relative;
+}
+
+#pokemon-search {
+  background-color: #2b2b2b;
+  color: #0f0;
+  border: 2px solid #333;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  padding: 5px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#pokemon-search:focus {
+  background-color: #333;
+  outline: none;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 2px solid #333;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #2b2b2b;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  color: #0f0;
+}
+
+.autocomplete-items div {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #555;
+}
+
+.autocomplete-items div:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.autocomplete-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+.autocomplete-items::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.autocomplete-items::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/*----------------------------------------*/
+
+/*------------- Footer Section -----------------------*/
+
+footer {
+  background: linear-gradient(
+    145deg,
+    #111,
+    #2c2c2e,
+    #111
+  ); /* Subtle gradient for depth */
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 190rem;
+  height: 7.95rem;
+  color: #e5e5ea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.125rem solid #5e5e61;
+
+  box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+
+  justify-content: center;
+  text-align: center;
+  width: 159.1rem;
+  height: 9rem;
+}
+
+.footer-section {
+  width: 30rem;
+  height: 5rem;
+}
+
+.footer-section h3 {
+  color: #ccccff;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px #ded9de;
+  width: 10rem;
+  padding: 0;
+  padding-left: 9rem;
+}
+.footer-section p,
+.footer-section a {
+  color: #ccccff;
+  font-size: 1rem;
+  margin: 0rem 0;
+
+  margin-right: 30px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff33a0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+
+.social-links a {
+  color: #ccccff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff33a0;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+}
+
+.newsletter-input {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+
+  margin-right: 20px;
+  height: 4px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.newsletter-button {
+  background-color: #ff33a0;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  margin-bottom: 1rem;
+  border: none;
+
+  margin-right: 20px;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #ff1aff;
+  transform: scale(1.05);
+}
+
+.footer-bottom {
+  border-top: 1px solid #c0bdc5;
+  width: 100%;
+  height: 20%;
+
+  font-size: 0.875rem;
+  color: #ccccff;
+}
+
+.footer-bottom a {
+  color: #cb0606;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/*-----------------------------*/
+@media (max-width: 1024px) {
+  #main-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  #profile-sidepanel {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  #theme-select-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #header-container {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+
+  #theme-select {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  #main-container {
+    padding: 1rem;
+  }
+
+  #profile-image {
+    max-width: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #main-container {
+    padding: 0.5rem;
+  }
+
+  #profile-sidepanel {
+    padding: 1rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  #theme-select-container {
+    padding: 0.5rem;
+  }
+
+  #inventory-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  footer {
+    padding: 1rem;
+    flex-direction: column;
+  }
+}
+/*-----------------------------*/
+/*-----------------------------*/

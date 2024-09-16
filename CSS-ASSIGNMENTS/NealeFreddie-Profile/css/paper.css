@@ -1,0 +1,138 @@
+/* Define CSS Variables for Retro Theme */
+:root {
+  --primary-font: "Press Start 2P";
+  --background-color: #111;
+  --text-color: #fff;
+  --heading-color: #00ff99;
+  --subheading-color: #ff0040;
+  --border-color: #ff0040;
+  --accent-color: #00ff99;
+  --paragraph-margin-bottom: 1.5rem;
+  --indent-size: 2rem;
+  --container-padding: 2.5rem;
+  --heading-font-size: 1.8rem;
+  --subheading-font-size: 1.3rem;
+  --body-font-size: 1rem;
+  --footer-color: #999;
+  --line-height: 1.75;
+  --header-border-color: #ff0040;
+}
+
+/* Reset default browser styles */
+
+#paper-main body {
+  font-family: var(--primary-font);
+  line-height: var(--line-height);
+  padding: 20px;
+  padding-top: 7rem; /* Push down content */
+}
+
+/* Layout for Main Container */
+#paper-main {
+  display: grid;
+  grid-template-columns: 30% 68%;
+  padding: var(--container-padding);
+  background-color: var(--background-color);
+}
+#paper-main .paper-content {
+  max-height: 600px; /* Adjust this height as necessary */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #222; /* Optional: Add a background color for better visibility */
+  border-radius: 2px;
+}
+
+/* Retro Header */
+#paper-main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #000;
+  color: var(--heading-color);
+  border-bottom: 4px solid var(--subheading-color);
+  text-align: center;
+  margin-bottom: 2rem; /* Add spacing after header */
+}
+
+#paper-main h1,
+#paper-main h2,
+#paper-main h3 {
+  font-family: var(--primary-font);
+  margin-bottom: 1.5rem; /* Spacing for headings */
+  animation: neon-flicker 2s infinite alternate;
+}
+#paper-main p {
+  text-align: justify;
+  padding-left: 30px;
+  padding-right: 34px;
+}
+
+/* Retro Buttons */
+#paper-main button {
+  padding: 0.75rem 1.25rem;
+  background-color: #333;
+  color: var(--accent-color);
+  border: 2px solid var(--subheading-color);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  margin: 1rem 0; /* Add spacing around buttons */
+}
+
+#paper-main button:hover {
+  background-color: var(--subheading-color);
+  color: #fff;
+}
+
+/* Footer Styles */
+#paper-main #footer-paper {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--footer-color);
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-color);
+}
+
+/* Animations */
+@keyframes neon-flicker {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(0, 255, 153, 0.5), 0 0 10px rgba(255, 0, 64, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 153, 1), 0 0 30px rgba(255, 0, 64, 1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.9);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

@@ -1,0 +1,463 @@
+/*-----------------
+:root {
+  --primary-font: "Press Start 2P";
+  --background-color: #111;
+  --text-color: #fff;
+  --heading-color: #00ff99;
+  --subheading-color: #ff0040;
+  --border-color: #ff0040;
+  --accent-color: #00ff99;
+
+}-----------------------*/
+
+/* GameBoy Body - Increased Depth */
+#gaming-container #gameboy-body {
+  transform: scale(0.65); /* Adjust the scale factor to change the size */
+  transform-origin: top left; /* This ensures that the Pokédex scales from the top left corner */
+  width: 600px; /* You can leave the width to auto or adjust as needed */
+  height: auto; /* Ensure height adapts */
+  background-color: #595959; /* Base color */
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 5px 5px;
+  background-position: 0 0, 2.5px 2.5px; /* Offset pattern for more texture */
+  border-radius: 2vw; /* Scales with the viewport */
+  border: 0.75vw solid #444; /* Scales with the viewport */
+  box-shadow: inset 0.8vw 0.8vw 1.5vw rgba(0, 0, 0, 0.8),
+    inset -0.5vw -0.5vw 0.8vw rgba(255, 255, 255, 0.2),
+    0 1.5vw 3vw rgba(0, 0, 0, 0.6); /* Added stronger shadows for inset effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Textured Shadow for depth */
+#gaming-container #gameboy-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05); /* Subtle sheen for texture */
+  box-shadow: inset 0 -1.5vw 2vw rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Pokémon Name Container */
+#gaming-container #pokemon-list-container {
+  width: 740px;
+  height: 140px;
+  background-color: #0f380f; /* Darker green for retro screen */
+  border-radius: 8px;
+  border: 4px solid #3a480c; /* Darker green border */
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.8),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1); /* Deep inset shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Styling for the Pokémon Name with Retro Green Look */
+#gaming-container #pokemon-name {
+  font-size: 2.5rem; /* Adjust size as needed */
+  font-family: "Press Start 2P", monospace; /* Retro font style */
+  color: #a3d977; /* Green retro color */
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow for retro effect */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 1px; /* Adds spacing between letters */
+  background-color: rgba(0, 50, 0, 0.2); /* Faint green background effect */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 5px rgba(0, 50, 0, 0.5); /* Adds a retro screen glow */
+}
+
+/* Main GameBoy Screen */
+#gaming-container #gameboy-screen {
+  width: 42.5rem;
+  height: 50rem;
+  background-color: #0f380f; /* Dark green for GameBoy screen */
+  border-radius: 0.5rem;
+  border: 0.25rem solid #3a480c; /* Dark green border */
+  box-shadow: inset 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.7),
+    inset -0.3rem -0.3rem 1rem rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem;
+  position: relative;
+}
+
+/* Green overlay for retro screen effect */
+#gaming-container #screen-overlay {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  background-color: rgba(155, 188, 47, 0.3); /* Semi-transparent green tint */
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 8px;
+}
+#gaming-container #screen {
+  width: 95%;
+  height: 95%;
+  background-color: #d0e1a1;
+  border: 4px solid #3a480c;
+  border-radius: 8px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.8),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  z-index: 1; /* Content is behind the overlay */
+}
+/* Pokémon Types - Move to the top */
+#gaming-container #pokemon-types {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.625rem; /* Spacing from the top */
+}
+/* Pokémon Image Container with Inset Shadow */
+#gaming-container #pokemon-img-container {
+  width: 65%; /* Adjust as needed */
+  padding: 2vw;
+  background-color: #0f380f;
+  border-radius: 1vw;
+  box-shadow: inset 0.7vw 0.7vw 2vw rgba(0, 0, 0, 0.8),
+    inset -0.5vw -0.5vw 2vw rgba(255, 255, 255, 0.2),
+    0 0.75vw 1.5vw rgba(0, 0, 0, 0.6); /* Added depth */
+  margin-bottom: 0.5rem;
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* Subtle texture */
+  background-size: 5px 5px;
+  background-position: 0 0, 2.5px 2.5px;
+}
+
+/* Pokémon Image Styling - Remains smaller */
+#gaming-container #pokemon-img {
+  width: 14rem;
+  height: 14rem;
+  object-fit: cover;
+  border: 0.1875rem solid #9bbc0f; /* Light green border for the image */
+  border-radius: 0.625rem;
+  background-color: #d0e1a1;
+  margin-bottom: 0.625rem;
+  box-shadow: inset 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5),
+    inset -0.125rem -0.125rem 0.3125rem rgba(255, 255, 255, 0.2);
+}
+/* Pokémon Description - Fits the remaining space inside the screen */
+/* Updated Pokémon Description Section */
+#gaming-container #pokemon-description {
+  width: 90%;
+  height: 90%; /* Adjust height to auto to fit content */
+  background-color: #0f380f; /* Dark green for text area */
+  padding: 0.5rem; /* Reduce padding */
+  text-align: left; /* Align text to the left */
+  font-size: 1rem; /* Slightly smaller font size */
+  font-family: "Press Start 2P", sans-serif;
+  border: 0.125rem solid #9bbc0f; /* Light green border */
+  border-radius: 0.3125rem;
+  color: #9bbc0f; /* Light green text */
+  box-shadow: inset 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.7),
+    inset -0.125rem -0.125rem 0.3125rem rgba(255, 255, 255, 0.2);
+  overflow-y: auto;
+  max-height: 12rem; /* Adjusted height for larger description area */
+  margin-bottom: 1.5rem; /* Reduced margin */
+}
+
+/* Default Pokémon Type Styling */
+#gaming-container .pokemon-type {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Press Start 2P", sans-serif;
+  color: #fff; /* Default white text */
+  border: 2px solid #3a480c;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.7),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.2);
+}
+#gaming-container .info-title {
+  font-size: 1rem; /* Adjust size for the section titles */
+  color: #ffcc00; /* Yellow for titles */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+  line-height: 0.2rem;
+  margin: 0;
+}
+#gaming-container .pokemon-info p {
+  font-size: 0.9rem; /* Adjust size for the info text */
+  color: #a3d977; /* Light green text for info */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow for retro effect */
+  margin: 0; /* Remove any default margin */
+}
+/* Adjust Pokémon Types */
+#gaming-container #pokemon-types {
+  margin-bottom: 0.5rem; /* Add more space between types and image */
+}
+/* Type-Specific Colors */
+#gaming-container .pokemon-type.water {
+  background-color: #6390f0; /* Blue for Water type */
+  border-color: #5b7ecd;
+}
+
+#gaming-container .pokemon-type.fire {
+  background-color: #f08030; /* Red for Fire type */
+  border-color: #d96d1d;
+}
+
+#gaming-container .pokemon-type.grass {
+  background-color: #78c850; /* Green for Grass type */
+  border-color: #68b040;
+}
+
+#gaming-container .pokemon-type.electric {
+  background-color: #f8d030; /* Yellow for Electric type */
+  border-color: #d4b020;
+}
+
+.pokemon-type.ice {
+  background-color: #98d8d8; /* Light blue for Ice type */
+  border-color: #82bcc0;
+}
+
+#gaming-container .pokemon-type.fighting {
+  background-color: #c03028; /* Dark red for Fighting type */
+  border-color: #9e2a24;
+}
+
+#gaming-container .pokemon-type.poison {
+  background-color: #a040a0; /* Purple for Poison type */
+  border-color: #8c378c;
+}
+
+#gaming-container .pokemon-type.ground {
+  background-color: #e0c068; /* Brown for Ground type */
+  border-color: #c4a350;
+}
+
+#gaming-container .pokemon-type.flying {
+  background-color: #a890f0; /* Light purple for Flying type */
+  border-color: #8c79cc;
+}
+
+#gaming-container .pokemon-type.psychic {
+  background-color: #f85888; /* Pink for Psychic type */
+  border-color: #d84670;
+}
+
+#gaming-container .pokemon-type.bug {
+  background-color: #a8b820; /* Olive green for Bug type */
+  border-color: #909a1b;
+}
+
+#gaming-container .pokemon-type.rock {
+  background-color: #b8a038; /* Tan for Rock type */
+  border-color: #a49030;
+}
+
+#gaming-container .pokemon-type.ghost {
+  background-color: #705898; /* Dark purple for Ghost type */
+  border-color: #5b4778;
+}
+
+#gaming-container .pokemon-type.dark {
+  background-color: #705848; /* Dark brown for Dark type */
+  border-color: #5a4538;
+}
+
+#gaming-container .pokemon-type.dragon {
+  background-color: #7038f8; /* Deep purple for Dragon type */
+  border-color: #5a30d4;
+}
+
+#gaming-container .pokemon-type.steel {
+  background-color: #b8b8d0; /* Silver for Steel type */
+  border-color: #a0a0c0;
+}
+
+#gaming-container #gaming-container .pokemon-type.fairy {
+  background-color: #ee99ac; /* Light pink for Fairy type */
+  border-color: #dc8398;
+}
+/* Control Buttons - Centered and adjusted */
+#gaming-container .control-container {
+  transform: scale(0.7); /* Adjust the scale factor to change the size */
+  transform-origin: center; /* This ensures that the Pokédex scales from the top left corner */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Left and Right Arrow Buttons with inset styling */
+#gaming-container #select-start {
+  display: flex;
+  justify-content: space-evenly; /* Evenly space the buttons */
+  align-items: center;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+#gaming-container .small-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #3a480c;
+  border: none;
+  border-radius: 0.5rem;
+  color: #9bbc0f;
+  font-size: 1.25rem;
+  box-shadow: inset 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.7),
+    inset -0.125rem -0.125rem 0.3125rem rgba(255, 255, 255, 0.2);
+}
+#gaming-container .small-button:active {
+  box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.8),
+    inset 3px 3px 8px rgba(255, 255, 255, 0.3);
+  background-color: #333;
+}
+
+#gaming-container .small-button svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+/* Button Styling */
+#gaming-container #nav-button {
+  background-color: #0f380f; /* Dark green base for buttons */
+  border-radius: 8px;
+  border: 2px solid #9bbc0f; /* Light green border for buttons */
+  box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 10px rgba(255, 255, 255, 0.1); /* Inset effect */
+  padding: 10px;
+  font-family: "Press Start 2P", sans-serif;
+  color: #9bbc0f; /* Light green text */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#gaming-container #nav-button:active {
+  box-shadow: inset -2px -2px 6px rgba(0, 0, 0, 0.8),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.2);
+  background-color: #5c5c5c;
+}
+#gaming-container #left-button-1,
+#gaming-container #right-button-1 {
+  padding: 0.625rem;
+  cursor: pointer;
+}
+
+/* Nameplate - Slightly Smaller to Fit */
+#gaming-container #nameplate {
+  width: 30vw;
+  background-color: #0f380f;
+  padding: 1vw;
+  text-align: center;
+  font-size: 2vw;
+  color: #9bbc0f;
+  border-radius: 0.5vw;
+  box-shadow: inset 0.7vw 0.7vw 1.5vw rgba(0, 0, 0, 0.8),
+    inset -0.5vw -0.5vw 1.5vw rgba(255, 255, 255, 0.2);
+}
+/* Container for Pokémon around the border */
+#gaming-container #pokemon-border-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Styling for Pokémon images around the border */
+#gaming-container .pokemon-border {
+  position: absolute;
+  width: 8vw;
+  height: auto;
+  transform: rotate(0deg);
+  z-index: 0;
+  opacity: 0.9;
+}
+/* Autocomplete container */
+#pokemon-search-container {
+  position: relative;
+}
+
+/* Style the search input field */
+#pokemon-search {
+  background-color: #2b2b2b; /* Set the background color to a dark retro shade */
+  color: #0f0; /* Set the text color to retro green */
+  border: 2px solid #333; /* Add a border for the retro feel */
+  font-family: "Press Start 2P", cursive; /* Use a pixelated retro font */
+  font-size: 12px; /* Smaller font size for retro look */
+  padding: 5px; /* Add padding inside the input */
+  width: 50%; /* Make the input take the full width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+/* Optional: Change the background color of the input when it's focused */
+#pokemon-search:focus {
+  background-color: #333; /* Slightly darker shade on focus */
+  outline: none; /* Remove the default outline */
+}
+
+/* Autocomplete items */
+.autocomplete-items {
+  position: absolute;
+  border: 2px solid #333; /* Darker border for retro feel */
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px; /* Adjust as needed */
+  overflow-y: auto;
+  background-color: #2b2b2b; /* Darker background for retro look */
+  font-family: "Press Start 2P", cursive; /* Use a pixelated retro font */
+  font-size: 12px; /* Smaller font size for retro feel */
+  color: #0f0; /* Retro green text color */
+}
+
+/* Individual autocomplete item */
+.autocomplete-items div {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #555; /* Add a subtle border between items */
+}
+
+.autocomplete-items div:hover {
+  background-color: #444; /* Darker background on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+/* Scrollbar styling for the retro look */
+.autocomplete-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+.autocomplete-items::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.autocomplete-items::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
